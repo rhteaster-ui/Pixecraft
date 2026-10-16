@@ -45,7 +45,7 @@ export const PIXCRAFT_TECH: TechItem[] = [
   },
   {
     name: 'GitHub',
-    category: 'Open Source',
+    category: 'code save',
     iconUrl: `${CDN}/github/181717/FFFFFF`,
     fallbackUrl: `${JSDELIVR}/github.svg`,
   },
