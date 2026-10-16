@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-07T14:37:31.931Z",
+  "results": [
+    {
+      "name": "landing 360/480/tablet/desktop and both themes",
+      "status": "passed"
+    },
+    {
+      "name": "landing tool opens empty Studio without picker or sample",
+      "status": "passed"
+    },
+    {
+      "name": "target compression preserves alpha and uses current image",
+      "status": "passed"
+    },
+    {
+      "name": "resize then compression keeps resized dimensions",
+      "status": "passed"
+    },
+    {
+      "name": "previous-step comparison and original remain distinct",
+      "status": "passed"
+    },
+    {
+      "name": "batch preset processes independent selected files",
+      "status": "passed"
+    },
+    {
+      "name": "ZIP export contains both results plus review report",
+      "status": "passed"
+    },
+    {
+      "name": "background canvas, rotate, crop, adjustment and watermark work",
+      "status": "passed"
+    },
+    {
+      "name": "failed target keeps previous valid result exportable",
+      "status": "passed"
+    },
+    {
+      "name": "save recipe JSON, export and import recipe",
+      "status": "passed"
+    },
+    {
+      "name": "replace does not remove other images; add appends",
+      "status": "passed"
+    },
+    {
+      "name": "saved project survives reload",
+      "status": "passed"
+    },
+    {
+      "name": "responsive editor at 360/480/768/1024/1440 and controls usable",
+      "status": "passed"
+    },
+    {
+      "name": "AI disabled without keys, no credentials in browser",
+      "status": "passed"
+    },
+    {
+      "name": "reduced motion and language switch",
+      "status": "passed"
+    },
+    {
+      "name": "AI result chain with mocked provider keeps HD dimensions and alpha",
+      "status": "passed"
+    },
+    {
+      "name": "offline app reload and saved local image edit",
+      "status": "passed"
+    },
+    {
+      "name": "no runtime errors",
+      "status": "passed"
+    }
+  ],
+  "problems": []
+}

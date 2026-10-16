@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-07T11:37:46.284Z",
+  "results": [
+    {
+      "name": "render contracts: full dimensions, policy, alpha, overlays, cancel and v1 pixels",
+      "status": "passed"
+    },
+    {
+      "name": "Composer raster exports have no seams for 2-5 frames at all preset ratios",
+      "status": "passed"
+    },
+    {
+      "name": "empty Studio, Saved access and 5-image independent import",
+      "status": "passed"
+    },
+    {
+      "name": "one CC gesture = one undo; reset is scoped; Compare remains explicit",
+      "status": "passed"
+    },
+    {
+      "name": "failed remote attempt preserves exportable state and never spills across five images",
+      "status": "passed"
+    },
+    {
+      "name": "mobile flyout geometry at 360/375/390/412/480",
+      "status": "passed"
+    },
+    {
+      "name": "Composer starts explicitly; divider, ratio, frame CC and undo are isolated",
+      "status": "passed"
+    },
+    {
+      "name": "Composer export exact 2160x2700; opacity, output and full canvas",
+      "status": "passed"
+    },
+    {
+      "name": "frame-local HD creates a variant without changing another instance or source asset",
+      "status": "passed"
+    },
+    {
+      "name": "touch pinch and divider gestures target separate state",
+      "status": "passed"
+    },
+    {
+      "name": "Composer responsive viewport matrix",
+      "status": "passed"
+    },
+    {
+      "name": "autosave offers recovery and restores Composer topology/style/output",
+      "status": "passed"
+    },
+    {
+      "name": "v1 IndexedDB projects load with source/history preserved",
+      "status": "passed"
+    },
+    {
+      "name": "quota errors leave in-memory edits usable",
+      "status": "passed"
+    },
+    {
+      "name": "About direct route, avatar fallback, links and mobile layout",
+      "status": "passed"
+    },
+    {
+      "name": "reduced motion reveals content and stops ambient animations",
+      "status": "passed"
+    },
+    {
+      "name": "no uncaught runtime errors",
+      "status": "passed"
+    }
+  ],
+  "problems": []
+}

@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+dist
+test-results
+docs
+tests
+scripts
+.vercel
+*.log

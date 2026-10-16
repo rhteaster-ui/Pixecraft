@@ -1,0 +1,42 @@
+{
+  "name": "pixcraft",
+  "version": "3.0.0",
+  "description": "Pixcraft creative image workspace — Vercel ready",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "tsc --noEmit && vite build",
+    "lint": "tsc --noEmit",
+    "start": "node server.ts",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "test": "node --import tsx --test tests/*.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "axios": "^1.20.0",
+    "idb": "^8.0.3",
+    "jose": "^6.2.12",
+    "lucide-react": "^1.51.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vercel/node": "^20.0.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

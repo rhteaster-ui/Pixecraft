@@ -1,0 +1,601 @@
+/* Pixcraft Studio lightweight scroll animations */
+
+/* Keyframe definitions */
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseGlowAccent {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(187, 223, 145, 0.5);
+  }
+  50% {
+    transform: scale(1.18);
+    box-shadow: 0 0 0 6px rgba(187, 223, 145, 0);
+  }
+}
+
+@keyframes sliderWiggleHint {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-10px);
+  }
+  30% {
+    transform: translateX(10px);
+  }
+  45% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(0);
+  }
+}
+
+/* Hero Section Staggered Entrance */
+.landing .hero-anim-overline {
+  animation: heroSlideRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.landing .hero-anim-overline .status-dot {
+  position: relative;
+  display: inline-block;
+  animation: pulseGlowAccent 2.2s infinite ease-in-out;
+}
+
+.landing .hero-anim-h1 {
+  animation: heroEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  will-change: transform, opacity;
+}
+
+.landing .hero-anim-p {
+  animation: heroEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+  will-change: transform, opacity;
+}
+
+.landing .hero-anim-buttons {
+  animation: heroEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  will-change: transform, opacity;
+}
+
+.landing .hero-anim-small {
+  animation: heroEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
+}
+
+.landing .hero-anim-proof {
+  animation: heroEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+}
+
+.landing .hero-anim-proof > span {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.landing .hero-anim-proof > span:hover {
+  transform: translateY(-2px);
+  color: var(--text);
+}
+
+.landing .hero-anim-demo {
+  animation: heroCardEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+  will-change: transform, opacity;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.landing .hero-anim-demo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+.landing .demo-split svg {
+  animation: sliderWiggleHint 2.2s ease-in-out 1.2s 1;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.landing .demo-photo:hover .demo-split svg {
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll-reveal system */
+
+/* Smooth, lightweight section wrapper reveal */
+.landing .scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.landing .scroll-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Header entrance */
+.landing .section-head {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.06s,
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.06s;
+}
+
+.landing .scroll-reveal.in-view .section-head {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Group Tabs in Tools Section */
+.landing .group-tabs {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+.landing .scroll-reveal.in-view .group-tabs {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing .group-tabs button {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing .group-tabs button:hover:not(.active) {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* Tool Rows: Staggered entrance using var(--i) */
+.landing .tool-row {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i, 0) * 35ms + 0.08s),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i, 0) * 35ms + 0.08s),
+              background 0.18s ease,
+              border-color 0.18s ease;
+  will-change: transform, opacity;
+}
+
+.landing .scroll-reveal.in-view .tool-row {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing .tool-row:hover {
+  background: var(--panel2);
+  transform: translateX(6px);
+  border-color: var(--accent);
+}
+
+.landing .tool-row > svg:last-child {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.landing .tool-row:hover > svg:last-child {
+  transform: translate(3px, -3px);
+  color: var(--accent);
+}
+
+.landing .tool-kind {
+  transition: all 0.18s ease;
+}
+
+.landing .tool-row:hover .tool-kind {
+  color: var(--accent);
+}
+
+/* Recipe Showcase Cards: Staggered 3D elevation */
+.landing .recipe-showcase > button {
+  opacity: 0;
+  transform: translateY(22px) scale(0.98);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i, 0) * 70ms + 0.1s),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i, 0) * 70ms + 0.1s),
+              background 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+  will-change: transform, opacity;
+}
+
+.landing .scroll-reveal.in-view .recipe-showcase > button {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.landing .recipe-showcase > button:hover {
+  background: var(--panel2);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.3);
+}
+
+.landing .recipe-showcase > button .recipe-number svg {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.landing .recipe-showcase > button:hover .recipe-number svg {
+  transform: translate(2px, -2px);
+  color: var(--accent);
+}
+
+.landing .process-drawing {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing .recipe-showcase > button:hover .process-drawing {
+  transform: scale(1.02);
+}
+
+.landing .recipe-showcase > button > span svg {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing .recipe-showcase > button:hover > span svg {
+  transform: translateX(4px);
+}
+
+/* Closing Section Reveal */
+.landing .closing > div:first-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.08s,
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+}
+
+.landing .closing > div:last-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.16s,
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.16s;
+}
+
+.landing .closing.in-view > div:first-child,
+.landing .closing.in-view > div:last-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing .closing-notes > div {
+  transition: transform 0.2s ease;
+}
+
+.landing .closing-notes > div:hover {
+  transform: translateX(4px);
+}
+
+.landing .closing-notes details {
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.landing .closing-notes summary {
+  transition: color 0.2s ease;
+}
+
+.landing .closing-notes summary:hover {
+  color: var(--accent);
+}
+
+/* Site Footer entrance */
+.landing .site-footer {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing .site-footer.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Primary Button & Link Interactions */
+.landing button.primary {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.2s ease,
+              box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing button.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -5px rgba(187, 223, 145, 0.32);
+  filter: brightness(1.08);
+}
+
+.landing button.primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px -2px rgba(187, 223, 145, 0.2);
+}
+
+.landing button.primary svg:last-child {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing button.primary:hover:not(:disabled) svg:last-child {
+  transform: translate(2px, -2px);
+}
+
+.landing .sample-link {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.landing .sample-link:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.landing .sample-link svg {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing .sample-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  .landing *,
+  .landing *:before,
+  .landing *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .landing .scroll-reveal,
+  .landing .section-head,
+  .landing .group-tabs,
+  .landing .tool-row,
+  .landing .recipe-showcase > button,
+  .landing .closing > div,
+  .landing .site-footer {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+/* Motion follows each section's role; native scrolling is never intercepted. */
+.hero-v2 { position:relative; }
+.ambient-trace { position:absolute; left:36px; right:36px; bottom:8px; height:1px; background:var(--line); overflow:hidden; pointer-events:none; }
+.ambient-trace::after { content:''; display:block; width:100px; height:1px; background:var(--accent); animation:trace-drift 14s linear infinite; opacity:.65; }
+@keyframes trace-drift { from { transform:translateX(-100px); } to { transform:translateX(1400px); } }
+.composer-demo-band.in-view .composition-demo img { animation:frame-converge 900ms cubic-bezier(.2,.7,.2,1) both; }
+.composer-demo-band.in-view .composition-demo img:nth-child(2) { animation-delay:100ms; }
+.composer-demo-band.in-view .composition-demo img:nth-child(3) { animation-delay:200ms; }
+.composer-demo-band.in-view .composition-demo img:nth-child(4) { animation-delay:300ms; }
+.composer-demo-band.in-view .composition-demo::after { animation:divider-demonstration 9s ease-in-out infinite; }
+@keyframes frame-converge { from { transform:scale(.86); opacity:.4; } to { transform:scale(1); opacity:1; } }
+@keyframes divider-demonstration { 0%,100% { transform:translateX(0); } 50% { transform:translateX(18px); } }
+.workflow-showcase.in-view .recipe-showcase>button { animation:recipe-sequence .65s ease both; animation-delay:calc(var(--i) * 120ms); }
+@keyframes recipe-sequence { from { transform:translateX(-12px); opacity:.3; } to { transform:translateX(0); opacity:1; } }
+@media(max-width:767px) { .ambient-trace::after { animation-duration:24s; } .composer-demo-band.in-view .composition-demo::after { animation:none; } }
+@media(prefers-reduced-motion:reduce) { .ambient-trace::after,.composer-demo-band.in-view .composition-demo::after,.composer-demo-band.in-view .composition-demo img,.workflow-showcase.in-view .recipe-showcase>button { animation:none!important; transform:none!important; opacity:1!important; } }
+
+/* Tech marquee stream */
+
+.pc-tech {
+  width: 100%;
+  padding: 32px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: relative;
+}
+
+.pc-tech__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 max(28px, calc((100vw - 1360px) / 2)) 20px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.pc-tech__line {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.pc-tech__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pc-tech__status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  display: inline-block;
+  animation: pulseGlowAccent 2.5s infinite ease-in-out;
+}
+
+.pc-tech__viewport {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.pc-tech__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: pcRail 26s linear infinite;
+  will-change: transform;
+}
+
+.pc-tech__item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 190px;
+  padding: 16px 28px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+  transition: color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.pc-tech__item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.68;
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pc-tech__item b {
+  margin-left: auto;
+  color: var(--accent);
+  opacity: 0;
+  font-weight: normal;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pc-tech__item:hover {
+  color: var(--text);
+  background: var(--soft);
+  transform: translateY(-2px);
+}
+
+.pc-tech__item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.pc-tech__item:hover b {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.pc-tech__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pcRail {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-tech {
+    padding: 22px 0;
+  }
+
+  .pc-tech__meta {
+    padding: 0 20px 14px;
+  }
+
+  .pc-tech__item {
+    min-width: 155px;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .pc-tech__item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pc-tech__track {
+    animation-duration: 20s;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-tech {
+    padding: 18px 0;
+  }
+
+  .pc-tech__meta {
+    padding: 0 16px 12px;
+  }
+
+  .pc-tech__status {
+    display: none;
+  }
+
+  .pc-tech__item {
+    min-width: 140px;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .pc-tech__item img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .pc-tech__track {
+    animation-duration: 18s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-tech__track {
+    animation: none !important;
+  }
+}

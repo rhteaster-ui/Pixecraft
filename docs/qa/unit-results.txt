@@ -1,0 +1,29 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> pixcraft@3.0.0 test
+> node --import tsx --test tests/*.test.ts
+
+✔ serverless no-key enhancement responds directly without a task registry or hidden resize (27.796294ms)
+Pixcraft API: INVALID_OPTIONS
+Pixcraft API: ACCESS_REQUIRED
+✔ basic isolation remains explicit and returns transparent output (6.868827ms)
+✔ API validates methods, body, foreign Vercel tenants and forged tickets (1.929135ms)
+✔ recipe parser rejects unknown tools, malformed CC and arbitrary fields (5.753927ms)
+✔ compression is policy, CC replaces parameters, original is immutable (1.517035ms)
+✔ crop, rotate and CC reset retain independent geometry (0.623048ms)
+✔ v1 migration preserves all raster history and does not mutate stored record (0.351579ms)
+✔ normalized templates tile the canvas exactly for 2-5 frames and all ratios (177.376699ms)
+✔ color correction preserves alpha and neutral pixels (0.366182ms)
+✔ public AI still requires two server keys; task JWT validates audience (15.958057ms)
+✔ cross-site origin is rejected and methods are checked (0.43855ms)
+✔ input caps and signatures are validated before image processing (6.242994ms)
+✔ download streaming limit stops oversized responses (4.547279ms)
+✔ ZIP writer includes UTF-8 names, CRC and central directory (1.696936ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 412.607822

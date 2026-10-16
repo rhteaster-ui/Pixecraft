@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-07T04:50:45.100Z",
+  "results": [
+    {
+      "name": "landing 360/480/tablet/desktop and both themes",
+      "status": "passed"
+    },
+    {
+      "name": "landing tool opens file chooser, not sample",
+      "status": "passed"
+    },
+    {
+      "name": "target compression preserves alpha and uses current image",
+      "status": "passed"
+    },
+    {
+      "name": "resize then compression keeps resized dimensions",
+      "status": "passed"
+    },
+    {
+      "name": "previous-step comparison and original remain distinct",
+      "status": "passed"
+    },
+    {
+      "name": "batch preset processes independent selected files",
+      "status": "passed"
+    },
+    {
+      "name": "ZIP export contains both results plus review report",
+      "status": "passed"
+    },
+    {
+      "name": "background canvas, rotate, crop, adjustment and watermark work",
+      "status": "passed"
+    },
+    {
+      "name": "failed target keeps previous version and is not exported as success",
+      "status": "passed"
+    },
+    {
+      "name": "save recipe JSON, export and import recipe",
+      "status": "passed"
+    },
+    {
+      "name": "replace does not remove other images; add appends",
+      "status": "passed"
+    },
+    {
+      "name": "saved project survives reload",
+      "status": "passed"
+    },
+    {
+      "name": "responsive editor at 360/480/768/1024/1440 and controls usable",
+      "status": "passed"
+    },
+    {
+      "name": "AI disabled without keys, no credentials in browser",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    }
+  ],
+  "problems": []
+}

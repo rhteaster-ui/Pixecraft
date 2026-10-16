@@ -1,0 +1,8 @@
+{
+  "name": "Pixcraft Studio",
+  "description": "Studio gambar R_HMT dengan Composer, color correction, batch editing, kompres target KB, autosave, dan ekspor ZIP.",
+  "requestFramePermissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
