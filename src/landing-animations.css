@@ -475,16 +475,18 @@
   display: flex;
   align-items: center;
   width: max-content;
-  animation: pcRail 26s linear infinite;
+  animation: pcRail 28s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .pc-tech__item {
   display: flex;
   align-items: center;
-  gap: 13px;
-  min-width: 190px;
-  padding: 16px 28px;
+  gap: 14px;
+  min-width: 210px;
+  padding: 16px 26px;
   border-right: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
@@ -493,15 +495,50 @@
   transition: color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
 }
 
-.pc-tech__item img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.68;
-  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+.pc-tech__icon-box {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
+.pc-tech__svg,
+.pc-tech__item img,
+.pc-tech__item svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: block;
+  opacity: 0.78;
+  transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease, color 0.25s ease;
+}
+
+.pc-tech__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.pc-tech__name {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.pc-tech__cat {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.pc-tech__arrow,
 .pc-tech__item b {
   margin-left: auto;
   color: var(--accent);
@@ -516,19 +553,25 @@
   transform: translateY(-2px);
 }
 
-.pc-tech__item:hover img {
-  filter: grayscale(0);
+.pc-tech__item:hover .pc-tech__icon-box,
+.pc-tech__item:hover .pc-tech__svg,
+.pc-tech__item:hover img,
+.pc-tech__item:hover svg {
   opacity: 1;
-  transform: scale(1.08);
+  color: var(--accent);
+  transform: scale(1.12);
 }
 
+.pc-tech__item:hover .pc-tech__arrow,
 .pc-tech__item:hover b {
   opacity: 1;
   transform: translateX(2px);
 }
 
-.pc-tech__track:hover {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .pc-tech__track:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes pcRail {
